@@ -1,5 +1,5 @@
 {
-    "name": "thenlabs/tick-task",
+    "name": "thenlabs/tick-async",
     "license": "MIT",
     "authors": [
         {
@@ -8,6 +8,7 @@
         }
     ],
     "require": {
+        "thenlabs/task-loop": "2.0.x-dev"
     },
     "require-dev": {
         "thenlabs/pyramidal-tests": "2.0.x-dev",
@@ -15,12 +16,19 @@
     },
     "autoload": {
         "psr-4": {
-            "ThenLabs\\TickTask\\": "src/"
-        }
+            "ThenLabs\\TickAsync\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "ThenLabs\\TickTask\\Tests\\": "tests/"
+            "ThenLabs\\TickAsync\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "fix": "./vendor/bin/php-cs-fixer fix",
+        "test": "./vendor/bin/pyramidal"
     }
 }
