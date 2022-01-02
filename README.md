@@ -7,7 +7,9 @@ Asynchronous tasks based on ticks.
 
 ## Installation.
 
-    $ composer require thenlabs/tick-task dev-master
+    $ composer require thenlabs/task-loop 2.0.x-dev thenlabs/tick-async 1.0.x-dev
+    
+>This project not contains a stable version yet.
 
 ## Usage.
 
