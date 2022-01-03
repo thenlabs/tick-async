@@ -47,3 +47,8 @@ function suspendTicks(): void
 {
     TickAsync::unregisterTickFunction();
 }
+
+function resumeTicks(): void
+{
+    TickAsync::registerTickFunction();
+}

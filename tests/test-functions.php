@@ -133,3 +133,34 @@ test(function () {
     $this->assertSame(0, $returnValue);
     $this->assertEquals($expected, $outputArray);
 });
+
+test(function () {
+    $command = sprintf("php %s", __DIR__.'/project6.php');
+    exec($command, $outputArray, $returnValue);
+
+    $expected = [
+        'async: 1',
+        'main: 1',
+        'async: 2',
+        'main: 2',
+        'async: 3',
+        'main: 3',
+        'async: 4',
+        'main: 4',
+        'async: 5',
+        'main: 5',
+        'main: 6',
+        'main: 7',
+        'main: 8',
+        'async: 6',
+        'main: 9',
+        'async: 7',
+        'main: 10',
+        'async: 8',
+        'async: 9',
+        'async: 10',
+    ];
+
+    $this->assertSame(0, $returnValue);
+    $this->assertEquals($expected, $outputArray);
+});
