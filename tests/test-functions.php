@@ -114,3 +114,22 @@ test(function () {
 
     $this->assertEquals(1, $diff->s);
 });
+
+test(function () {
+    $command = sprintf("php %s", __DIR__.'/project5.php');
+    exec($command, $outputArray, $returnValue);
+
+    $expected = [
+        'async: 1',
+        'main: 1',
+        'main: 2',
+        'main: 3',
+        'async: 2',
+        'async: 3',
+        'async: 4',
+        'async: 5',
+    ];
+
+    $this->assertSame(0, $returnValue);
+    $this->assertEquals($expected, $outputArray);
+});

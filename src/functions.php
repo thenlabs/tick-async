@@ -42,3 +42,8 @@ function delay(string $value): void
 {
     await(new TimeInterval($value));
 }
+
+function suspendTicks(): void
+{
+    TickAsync::unregisterTickFunction();
+}
